@@ -1,0 +1,59 @@
+:root {
+	--fontfamily: monospace;
+}
+
+*:not(i) {
+	padding: 0;
+	margin: 0;
+	font-family: var(--fontfamily); !important;
+}
+
+html {
+	font-size: 16px;
+}
+
+body {
+	max-width: 800px;
+	width: 100%;
+	padding: 0 1rem;
+	margin: 2rem auto;
+	box-sizing: border-box;
+}
+
+/* Header */
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	line-height: 0;
+	margin-bottom: 1rem;
+}
+
+header .brand > img {
+	height: 2rem;
+}
+
+header .styles {
+	list-style: none;
+	display: flex;
+}
+
+header .style-item {
+	padding: 0.5rem;
+}
+
+header .style-item:last-child {
+	border-left: 1px solid gray;
+	display: flex;
+	align-items: center;
+	gap: 0.25rem;
+}
+
+header .fontfamily > select {
+	border: none;
+	cursor: pointer;
+}	
+
+header .fontfamily > select:focus {
+	outline: none;
+}

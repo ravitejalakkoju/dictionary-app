@@ -1,17 +1,18 @@
-import { HeaderModel } from '../../models/header_model.js';
-import { loadHTML, loadValues } from '../../shared/js/common.js';
+import { Component } from '../component.js'
+import { HeaderModel } from '../../models/index.js';
+import { FontFamily, Theme } from '../../shared/js/constants.js'
 
-export class Header {
+export class Header extends Component {
   constructor() {
-    this.headerModel =  new HeaderModel();
-    loadHTML('./components/header/header.html', 'header', this.headerModel.getModel());
+    super();
+    this.model = new HeaderModel();
   }
 
-  changeFont(fontfamily) {
-    this.headerModel.setValueOf('fontfamily', fontfamily);
+  changeFont(name, fontfamily) {
+    this.model.setValue(name, fontfamily);
   }
 
-  changeTheme(theme) {
-    this.headerModel.setValueOf('theme', theme);
+  changeTheme(name, isChecked) {
+    this.model.setValue(name, isChecked ? Theme.dark : Theme.light , isChecked ? '<i class="fa-regular fa-moon"></i>' : '<i class="fa-regular fa-sun"></i>');
   }
 }

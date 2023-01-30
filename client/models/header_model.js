@@ -1,23 +1,15 @@
-import {loadHTML, loadValues} from '../../shared/js/common.js'
+import { Component, FontFamily, Theme } from '../../shared/js/constants.js'
+import { Model } from './model.js'
 
-export class HeaderModel {
-	model = {};
-
-	constructor(fontfamily = 'Serif', theme = 'light') {
+export class HeaderModel extends Model{
+	constructor(fontfamily = FontFamily.serif, theme = Theme.light) {
+		super();
 	    this.model['fontfamily'] = fontfamily;
 	    this.model['theme'] = theme;
+	    this.htmlModel['theme'] = theme == Theme.light ? '<i class="fa-regular fa-sun"></i>' : '<i class="fa-regular fa-moon"></i>';
 	}
 
-	getModel() {
-		return this.model;
-	}
-
-	getValueOf(id) {
-		return this.model[id];
-	}
-
-	setValueOf(id, value) {
-		this.model[id] = value;
-		loadValues(this.model);
+	setValue(id, value, html = null) {
+		this.setValueOf(id, value, Component.header, html);
 	}
 }
