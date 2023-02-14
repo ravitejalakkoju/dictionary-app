@@ -8,11 +8,11 @@ export class Header extends Component {
     this.model = new HeaderModel();
   }
 
-  changeFont(name, fontfamily) {
-    this.model.setValue(name, fontfamily);
+  changeFont(fontfamily) {
+    this.model.setValue('fontfamily', fontfamily);
   }
 
-  changeTheme(name, isChecked) {
-    this.model.setValue(name, isChecked ? Theme.dark : Theme.light , isChecked ? '<i class="fa-regular fa-moon"></i>' : '<i class="fa-regular fa-sun"></i>');
+  changeTheme(isChecked) {
+    this.model.setValue('theme', isChecked ? Theme.dark : Theme.light , isChecked ? '<i class="fa-regular fa-moon"></i>' : '<i class="fa-regular fa-sun"></i>');
   }
 }

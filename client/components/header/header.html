@@ -1,14 +1,14 @@
 <a class="brand" href="#"><img src="../../assets/images/logo.svg"></a>
-<ul class="styles">
+<ul class="styles-list">
   <li class="style-item fontfamily">
-    <select id="header-fontfamily" onchange="manager.header.changeFont('fontfamily', event.target.value)">
+    <select id="header-fontfamily" class="fontfamily-select" onchange="manager.header.changeFont(event.target.value)">
       <option value="serif">Serif</option>
       <option value="monospace">Monospace</option>
       <option value="cursive">Cursive</option>
     </select>
   </li>
   <li class="style-item theme">
-    <input type="checkbox" name="theme" onchange="manager.header.changeTheme('theme', event.target.checked)">
-    <span id="header-theme" data-name="theme"></span>
+    <input type="checkbox" name="theme" onchange="manager.header.changeTheme(event.target.checked)">
+    <span id="header-theme" class="theme-icon" data-name="theme"></span>
   </li>
 </ul>
