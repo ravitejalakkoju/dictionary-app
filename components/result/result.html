@@ -1,0 +1,43 @@
+<div class="d-flex justify-content-between">
+  <div class="keyword-header">
+    <h1 class="keyword">
+      {word}
+    </h1>
+    <span class="keyword-pronunciation">{phonetic}</span>
+  </div>
+  <audio id="text-audio">
+    <source src="{audio}" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+  <button id="btn-audio-play" class="btn-play cursor-pointer">
+    <i class="fa-solid fa-play"></i>
+  </button>
+</div>
+{meanings}
+
+<template id="meanings-template">
+  <div class="type">
+    <div class="heading-break d-flex">
+      <span class="text">{partOfSpeech}</span>
+      <span class="hl-1"></span>
+    </div>
+    <div class="meaning">
+      <span class="text">Meaning</span>
+      <ul class="meaning-list">{definitions}</ul>
+    </div>
+    <div class="synonyms d-flex">
+      <span class="text">Synonyms</span>
+      <ul class="synonyms-list">{synonyms}</ul>
+    </div>
+  </div>
+  <template id="definitions-template">
+    <li class="meaning-list-item">
+      <span>{definition}</span>
+      <span class="example">{example}</span>
+    </li>
+  </template>
+  <template id="synonyms-template">
+    <li>{synonyms}</li>
+  </template>
+</template>
+

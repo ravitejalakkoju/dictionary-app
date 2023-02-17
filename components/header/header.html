@@ -1,0 +1,30 @@
+<img src="https://beamish-hotteok-903247.netlify.app/assets/logo-1ad79f67.svg" alt="logo" class="logo">
+<ul class="header-list d-flex">
+  <li class="header-list-item">
+    <button class="btn-font-select cursor-pointer d-flex" id="js-select-font">
+      <span id="js-selectedfontfamily">{selectedfontfamily}</span>
+      <img src="https://beamish-hotteok-903247.netlify.app/assets/icon-arrow-down-f0eae304.svg" alt="dropdown" class="dropdown-icon" id="js-dropdown"/>
+    </button>
+    <ul class="font-list cursor-pointer" id="js-font-family-select">{fontfamilies}</ul>
+  </li>
+  <li class="header-list-item">
+    <div class="vl-1"></div>
+  </li>
+  <li class="header-list-item d-flex">
+    <input type="checkbox" class="checkbox-theme cursor-pointer" id="js-theme-checkbox"/>
+    <div class="toggle-theme cursor-pointer" id="js-theme-toggle"></div>
+    <label class="toggle-theme-label" id="js-theme">
+      <i class="fa-regular fa-{theme}"></i>
+    </label>
+  </li>
+</ul>
+
+<template id="fontfamilies-template">
+  <li class="font-list-item cursor-pointer">
+    {fontfamily}
+  </li>
+</template>
+
+<template id="theme-template">
+  <i class="fa-regular fa-{theme}"></i>
+</template>
